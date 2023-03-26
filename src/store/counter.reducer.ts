@@ -1,5 +1,5 @@
+import { RootActionType } from "./action.type";
 import { counterActionsType } from "./counter.type";
-import { PayloadAction, AnyAction } from "@reduxjs/toolkit";
 interface IState {
     counter: number
     is_loading: boolean
@@ -11,8 +11,9 @@ const initState: IState = {
 }
 
 
+
 // AnyAction | PayloadAction
-export const counterReducer = (state: IState = initState, action: any) => {
+export const counterReducer = (state: IState = initState, action: RootActionType) => {
 
     switch (action.type) {
         case counterActionsType.increment_counter:

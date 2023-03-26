@@ -1,7 +1,7 @@
 import React from 'react'
 import { useAppDispatch, useAppSelector } from './store/store.hook';
 import { RootState } from './store/store'
-import { onIncrementCounter } from './store/counter.action';
+import { onDecrementCounter, onIncrementCounter } from './store/counter.action';
 
 export const UseCounter = () => {
     const dispatch = useAppDispatch()
@@ -11,5 +11,10 @@ export const UseCounter = () => {
         await dispatch(onIncrementCounter())
         console.log("after call");
     }
-    return { is_loading, counter, handleIncrement }
+
+    const handleDecrement = async () => {
+        await dispatch(onDecrementCounter())
+        console.log("after call");
+    }
+    return { is_loading, counter, handleIncrement, handleDecrement }
 }
