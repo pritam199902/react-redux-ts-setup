@@ -4,7 +4,7 @@ import { asyncActionHandler } from "./helper";
 
 
 
-export const onIncrementCounter = () => async (dispatch: AppDispatch) => asyncActionHandler(async () => {
+export const onIncrementCounter = () => async (dispatch: AppDispatch) => {
     console.log('async call initiated....');
     dispatch({
         type: counterActionsType.loading_counter
@@ -18,7 +18,7 @@ export const onIncrementCounter = () => async (dispatch: AppDispatch) => asyncAc
         type: counterActionsType.increment_counter
     } as TIncrementAction);
     console.log("async call complete");
-})
+}
 
 
 
